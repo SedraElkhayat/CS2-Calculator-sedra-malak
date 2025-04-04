@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -Wl,--enable-auto-import CMakeFiles/calc.dir/calculator.cpp.o CMakeFiles/calc.dir/test.cpp.o -o calc.exe -Wl,--out-implib,libcalc.dll.a -Wl,--major-image-version,0,--minor-image-version,0
