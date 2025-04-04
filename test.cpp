@@ -1,12 +1,15 @@
 #include <iostream>
 #include "calculator.h"
+#include <string>
+#include "calculator.h"
 using namespace std; 
-
 
 int main() {
 unsigned int a;
 unsigned int b;
 unsigned int c;
+string mathexpression;
+double result;
 
 while(true){cout<<"which operation would you like to use?"<<endl;
     cout<<"--------please enter only numbers between 1 and 8-------"<<endl;
@@ -18,19 +21,20 @@ while(true){cout<<"which operation would you like to use?"<<endl;
     cout<<" 6.GCD "<<endl;
     cout<<" 7.LCM"<<endl;
     cout<<" 8.Random Number Generator in a specific range"<<endl;
-    cout<<" 9. Exit" << endl;
-    
+    cout<<" 9.Complete Math Expression"<<endl;
+    cout<<" 10. Exit" << endl;
+   
      cin>>c;
 
 
-     if (c == 9) {  
+     if (c == 10) {  
         cout << "Exiting the calculator. Goodbye!" << endl;
         break;
     }
 
-    if (c < 1 || c > 8) { 
+    if (c < 1 || c > 9) {
         cout << "Invalid choice! Please enter a number between 1 and 8." << endl;
-        continue; 
+        continue;
     }
 
 switch (c){
@@ -97,8 +101,15 @@ switch (c){
         cout <<"random number:"<<rand(a,b)<<endl;}
     break;
 
+    case 9:
+    {
+        cout << "Enter a mathematical expression: ";
+        cin.ignore();  
+        getline(cin, mathexpression);
+        result = evaluateExpression(mathexpression);
+        cout << "The result is: " << result << endl;
+   
+    }
+    break;}
+}}
 
-}
-
-}
-}
